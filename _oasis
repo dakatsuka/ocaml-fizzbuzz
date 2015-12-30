@@ -11,10 +11,11 @@ Library fizzbuzz
   Modules:      Fizzbuzz
 
 Executable main
-  Path:         src
-  BuildTools:   ocamlbuild
-  MainIs:       main.ml
-  BuildDepends: fizzbuzz
+  Path:           src
+  BuildTools:     ocamlbuild
+  MainIs:         main.ml
+  BuildDepends:   fizzbuzz
+  CompiledObject: Best
 
 Executable fizzbuzz_test
   Path:           test
@@ -23,6 +24,7 @@ Executable fizzbuzz_test
   Build$:         flag(tests)
   Install:        false
   BuildDepends:   fizzbuzz, oUnit
+  CompiledObject: Best
 
 Test fizzbuzz_test
   Run$:             flag(tests)

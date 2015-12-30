@@ -12,7 +12,7 @@
 $ oasis setup
 $ ocaml setup.ml -configure
 $ ocaml setup.ml -build
-$ ./main.byte
+$ ./main.native
 1
 2
 Fizz
