@@ -1,0 +1,30 @@
+OASISFormat: 0.4
+Name:        fizzbuzz
+Version:     0.1
+Synopsis:    FizzBuzz with OCaml
+Authors:     Dai Akatsuka
+License:     MIT
+
+Library fizzbuzz
+  Path:         lib
+  BuildTools:   ocamlbuild
+  Modules:      Fizzbuzz
+
+Executable main
+  Path:         src
+  BuildTools:   ocamlbuild
+  MainIs:       main.ml
+  BuildDepends: fizzbuzz
+
+Executable fizzbuzz_test
+  Path:           test
+  MainIs:         fizzbuzz_test.ml
+  BuildTools:     ocamlbuild
+  Build$:         flag(tests)
+  Install:        false
+  BuildDepends:   fizzbuzz, oUnit
+
+Test fizzbuzz_test
+  Run$:             flag(tests)
+  Command:          $fizzbuzz_test
+  WorkingDirectory: test
